@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/navbar';
+import NavTodoMaderas from './components/navbar/index.jsx'
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <NavTodoMaderas/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
