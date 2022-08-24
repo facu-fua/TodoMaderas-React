@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from '../cartWidget/cartWidget';
 
 function NavTodoMaderas() {
     return (
@@ -25,6 +26,7 @@ function NavTodoMaderas() {
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+                    <CartWidget img="/cartlogo.png" />
                 </Navbar.Collapse>
             </Container>
         </Navbar>

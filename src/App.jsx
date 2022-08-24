@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import NavTodoMaderas from './components/navbar/index.jsx'
+import NavTodoMaderas from './components/navbar/index.jsx';
+import ItemListContainer from './containers/itemListContainer.jsx'
+
 
 function App() {
   return (
     <div className="App">
       <NavTodoMaderas/>
+      <ItemListContainer greeting="Bienvenidos a TodoMaderas"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
