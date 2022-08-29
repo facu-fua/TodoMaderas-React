@@ -8,7 +8,7 @@ function NavTodoMaderas() {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <img class="navbar-img" src="/logo.png" alt="" />
+                <img class="navbar-img" src="/assets/images/logo.png" alt="" />
                 <Navbar.Brand href="#home">TodoMaderas</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -26,7 +26,7 @@ function NavTodoMaderas() {
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <CartWidget img="/cartlogo.png" />
+                    <CartWidget img="/assets/images/cartlogo.png" />
                 </Navbar.Collapse>
             </Container>
         </Navbar>

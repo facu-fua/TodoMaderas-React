@@ -55,3 +55,25 @@
 .navCart img{
   width: 40px;
 }
+
+.body{
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  background-color: burlywood;
+  width: 100%;
+}
+
+.contador{
+  margin: 0px 20px;
+}
+.itemCounter{
+  margin: 20px 0px;
+}
