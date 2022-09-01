@@ -77,3 +77,16 @@
 .itemCounter{
   margin: 20px 0px;
 }
+.itemCounter button{
+  margin: 10px;
+}
+
+.productList{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.productList div{
+  margin: 5px;
+}

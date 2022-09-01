@@ -3,6 +3,8 @@ import NavTodoMaderas from './components/navbar/index.jsx';
 import ItemListContainer from './containers/itemListContainer.jsx';
 import ItemCard from './components/card/card';
 import Footer from './components/footer';
+import ProductList from './components/productList/productList';
+import ProductListContainer from './containers/productListContainer';
 
 
 
@@ -13,10 +15,10 @@ function App() {
                 <NavTodoMaderas />
                 <ItemListContainer greeting="Bienvenidos a TodoMaderas" />
             </header>
-            <body className='body'>
-                <ItemCard img="/assets/images/madera.png"/>
+            <div className='body'>
+                <ProductListContainer/>
                 <Footer/>
-            </body>
+            </div>
         </div>
     );
 }
