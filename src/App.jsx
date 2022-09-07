@@ -1,10 +1,9 @@
 import './App.css';
 import NavTodoMaderas from './components/navbar/index.jsx';
 import ItemListContainer from './containers/itemListContainer.jsx';
-import ItemCard from './components/card/card';
 import Footer from './components/footer';
-import ProductList from './components/productList/productList';
 import ProductListContainer from './containers/productListContainer';
+import ItemDetailContainer from './containers/itemDetailContainer';
 
 
 
@@ -16,7 +15,8 @@ function App() {
                 <ItemListContainer greeting="Bienvenidos a TodoMaderas" />
             </header>
             <div className='body'>
-                <ProductListContainer/>
+                {/* <ProductListContainer/> */}
+                <ItemDetailContainer/>
                 <Footer/>
             </div>
         </div>

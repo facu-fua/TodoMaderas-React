@@ -47,6 +47,7 @@
   height: 50px;
   background-color: #fc718f;
   border-radius: 15px;
+  border: black 2px solid;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +55,7 @@
 
 .navCart img{
   width: 40px;
+
 }
 
 .body{
