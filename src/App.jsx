@@ -4,21 +4,27 @@ import ItemListContainer from './containers/itemListContainer.jsx';
 import Footer from './components/footer';
 import ProductListContainer from './containers/productListContainer';
 import ItemDetailContainer from './containers/itemDetailContainer';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 
 function App() {
     return (
         <div className="App">
-            <header>
-                <NavTodoMaderas />
-                <ItemListContainer greeting="Bienvenidos a TodoMaderas" />
-            </header>
-            <div className='body'>
-                {/* <ProductListContainer/> */}
-                <ItemDetailContainer/>
-                <Footer/>
-            </div>
+            <BrowserRouter>
+                <header>
+                    <NavTodoMaderas />
+                    <ItemListContainer greeting="Bienvenidos a TodoMaderas" />
+                </header>
+                <div className='body'>
+                    <Routes>
+                        <Route path="/category/:categoryId" element={<ProductListContainer />} />
+                        <Route path="/" element={<ProductListContainer />} />
+                        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+                    </Routes>
+                    <Footer />
+                </div>
+            </BrowserRouter>
         </div>
     );
 }

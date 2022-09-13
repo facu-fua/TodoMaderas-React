@@ -1,5 +1,5 @@
 const ItemDetail = (prop) => {
-    const item = prop.item[0]
+    const item = prop.item
     console.log(item)
     return (
         <div className="detalles">

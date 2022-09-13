@@ -92,3 +92,8 @@
 .productList div{
   margin: 5px;
 }
+
+.imgItem{
+  border-radius: 15px;
+  height: 280px;
+}

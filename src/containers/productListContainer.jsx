@@ -1,24 +1,40 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 import ProductList from "../components/productList/productList"
 
 const ProductListContainer = () =>{
+
+    const {categoryId} = useParams();
+
     const [productos, setProductos] = useState([])
     const productFetch = async () =>{
         try {
-            const response = await fetch("https://api.mercadolibre.com/sites/MLA/search?q=silla%20madera");
+            let response = []
+            if(categoryId===undefined || categoryId==="Capital Federal" || categoryId==="Buenos Aires"){
+                response = await fetch("https://api.mercadolibre.com/sites/MLA/search?q=muebles%20de%20madera")
+            }else{
+                response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${categoryId}`)
+            }
             const data = await response.json();
-            setProductos(data.results.splice(0,10))
+            if (categoryId===undefined){
+                setProductos(data.results)
+            }else if(categoryId==="Capital Federal" || categoryId==="Buenos Aires"){
+                setProductos(data.results.filter(
+                    element => element.address.state_name === categoryId
+                ))
+            }else {
+                setProductos(data.results)
+            }
+            console.log(data.results)
         } catch (error) {
             console.log(error)
         }
     }
 
     useEffect(()=>{
-        setTimeout(() => {
             productFetch();
-        }, 2000);
-    },[])
+    },[categoryId])
 
     return(
         <div className="productList">
@@ -26,5 +42,4 @@ const ProductListContainer = () =>{
         </div>
     )
 }
-
 export default ProductListContainer;
