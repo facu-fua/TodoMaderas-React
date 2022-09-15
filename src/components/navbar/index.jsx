@@ -1,4 +1,3 @@
-import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -38,7 +37,7 @@ function NavTodoMaderas() {
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">
-                                <Link to={"/category/:id"}>Nosotros</Link>
+                                {/* <Link to={"/category/:id"}>Nosotros</Link> */}
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>

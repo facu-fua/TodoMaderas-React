@@ -1,28 +1,32 @@
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
-const { useState } = require("react");
+const ItemCounter = (props) => {
 
-const ItemCounter = (props) =>{
-    const [counter, setCounter] = useState(props.initial);
-    /* const onAdd = () =>{
-        alert (counter===1?"Se agrego "+ counter +" item al carrito" : "Se agregaron "+ counter +" items al carrito")
-    } */
-    return(
+    let setCompra = 0
+    return (
         <div className="itemCounter">
-            <Button onClick={() =>
-            {if (counter>1){
-                setCounter(counter - 1)}}
-                }>-</Button>
+            <Button onClick={() => {
+                if (props.compra > 1) {
+                    props.setCompra(props.compra - 1)
+                }
+            }
+            }>-</Button>
             <span className="contador">
-                {counter}
+                {props.compra}
             </span>
-            <Button onClick={() =>{
-                if (counter<props.stock)
-                setCounter(counter + 1)}
-                }>+</Button>
-                <div>
-                <Button variant="primary" onClick={props.onAdd}>Agregar al Carrito</Button>
-                </div>
+            <Button onClick={() => {
+                if (props.compra < props.stock)
+                    props.setCompra(props.compra + 1)
+            }
+            }>+</Button>
+            <div>
+                <Link to="/cart">
+                    <Button variant="primary" onClick={props.onAdd}>
+                        Comprar
+                    </Button>
+                </Link>
+            </div>
         </div>
     )
 };
