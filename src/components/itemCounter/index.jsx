@@ -2,30 +2,35 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 const ItemCounter = (props) => {
-
-    let setCompra = 0
     return (
         <div className="itemCounter">
             <Button onClick={() => {
-                if (props.compra > 1) {
-                    props.setCompra(props.compra - 1)
+                if (props.counter > 1) {
+                    props.setCounter(props.counter - 1)
                 }
             }
             }>-</Button>
             <span className="contador">
-                {props.compra}
+                {props.counter}
             </span>
             <Button onClick={() => {
-                if (props.compra < props.stock)
-                    props.setCompra(props.compra + 1)
+                if (props.counter < props.stock)
+                    props.setCounter(props.counter + 1)
             }
             }>+</Button>
             <div>
-                <Link to="/cart">
-                    <Button variant="primary" onClick={props.onAdd}>
+                {props.compra ?
+                    (<Button variant="primary" onClick={props.onAdd}>
                         Comprar
                     </Button>
-                </Link>
+                    ) :
+                    (<Link to="/cart">
+                        <Button variant="primary">
+                            Ir al carrito
+                        </Button>
+                    </Link>
+                    )
+                }
             </div>
         </div>
     )

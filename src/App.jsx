@@ -5,6 +5,9 @@ import Footer from './components/footer';
 import ProductListContainer from './containers/productListContainer';
 import ItemDetailContainer from './containers/itemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Nosotros from './components/nosotros';
+import Carrito from './components/carrito/index';
+import { CartContextProvider } from './context/cartContext'
 
 
 
@@ -17,11 +20,15 @@ function App() {
                     <ItemListContainer greeting="Bienvenidos a TodoMaderas" />
                 </header>
                 <div className='body'>
-                    <Routes>
-                        <Route path="/category/:categoryId" element={<ProductListContainer />} />
-                        <Route path="/" element={<ProductListContainer />} />
-                        <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-                    </Routes>
+                    <CartContextProvider>
+                        <Routes>
+                            <Route path="/category/:categoryId" element={<ProductListContainer />} />
+                            <Route path="/" element={<ProductListContainer />} />
+                            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+                            <Route path="/nosotros" element={<Nosotros />} />
+                            <Route path="/cart" element={<Carrito />} />
+                        </Routes>
+                    </CartContextProvider>
                     <Footer />
                 </div>
             </BrowserRouter>

@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import { useState } from "react";
+import { CartContext } from "../../context/cartContext";
 import ItemCounter from "../itemCounter";
 
 const ItemDetail = (prop) => {
     const item = prop.item
-    const [compra, setCompra] = useState(0)
-    const carrito = []
+    const [counter, setCounter] = useState(0)
+    const [compra, setCompra] = useState(true)
+    const { agregarProducto } = useContext(CartContext)
 
     const onAdd = () => {
-        carrito.push(compra)
+        setCompra(false)
+        agregarProducto(item,counter)
     }
 
     return (
@@ -17,7 +21,7 @@ const ItemDetail = (prop) => {
             <h4>${item.price}</h4>
             <h5>Condicion: "{item.attributes[1].value_name}"</h5>
             <p>Vendidos: {item.sold_quantity}</p>
-            <ItemCounter initial={1} stock={10} onAdd={onAdd} compra={compra} setCompra={setCompra}/>
+            <ItemCounter initial={1} stock={10} onAdd={onAdd} counter={counter} setCounter={setCounter} compra={compra} />
         </div>
     )
 };
