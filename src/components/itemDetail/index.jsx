@@ -7,11 +7,16 @@ const ItemDetail = (prop) => {
     const item = prop.item
     const [counter, setCounter] = useState(0)
     const [compra, setCompra] = useState(true)
-    const { agregarProducto } = useContext(CartContext)
+    const { agregarProducto, existeEnCarrito, carrito } = useContext(CartContext)
 
     const onAdd = () => {
         setCompra(false)
-        agregarProducto(item,counter)
+        if (existeEnCarrito(item)){
+            const index = carrito.findIndex(producto => producto.id===item.id)
+            carrito[index].cantidad = existeEnCarrito(item).cantidad + counter
+        }else{
+            agregarProducto(item,counter)
+        }
     }
 
     return (

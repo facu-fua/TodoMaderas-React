@@ -22,11 +22,11 @@ const CartContextProvider = ({children}) =>{
     const removerProducto = (id) =>{
         const index = carrito.findIndex(item => item.id===id)
         console.log(index)
-        setCarrito(carrito.splice(index,1))
+        setCarrito()
     }
 
-    const existeEnCarrito = (id) =>{
-        const existe = carrito.find(producto=>producto.id === id)
+    const existeEnCarrito = (item) =>{
+        return carrito.find(producto=>producto.id === item.id)
     }
 
     return(

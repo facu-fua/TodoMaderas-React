@@ -25,8 +25,7 @@ const Carrito = () => {
                         <h2>{producto.nombre}</h2>
                         <h2>{producto.precio}</h2>
                         <h2>{producto.cantidad}</h2>
-                        <button onClick={()=>{eventoQuitarProducto(producto.id) 
-                            console.log(producto.id)}}> Quitar producto </button>
+                        <button onClick={()=>{eventoQuitarProducto(producto.id)}}> Quitar producto </button>
                     </div>
                 )
             })}
