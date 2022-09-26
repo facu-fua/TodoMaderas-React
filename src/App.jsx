@@ -15,12 +15,12 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
+            <CartContextProvider>
                 <header>
                     <NavTodoMaderas />
                     <ItemListContainer greeting="Bienvenidos a TodoMaderas" />
                 </header>
                 <div className='body'>
-                    <CartContextProvider>
                         <Routes>
                             <Route path="/category/:categoryId" element={<ProductListContainer />} />
                             <Route path="/" element={<ProductListContainer />} />
@@ -28,9 +28,9 @@ function App() {
                             <Route path="/nosotros" element={<Nosotros />} />
                             <Route path="/cart" element={<Carrito />} />
                         </Routes>
-                    </CartContextProvider>
                     <Footer />
                 </div>
+                </CartContextProvider>
             </BrowserRouter>
         </div>
     );

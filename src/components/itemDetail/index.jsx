@@ -5,18 +5,13 @@ import ItemCounter from "../itemCounter";
 
 const ItemDetail = (prop) => {
     const item = prop.item
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(1)
     const [compra, setCompra] = useState(true)
     const { agregarProducto, existeEnCarrito, carrito } = useContext(CartContext)
 
     const onAdd = () => {
         setCompra(false)
-        if (existeEnCarrito(item)){
-            const index = carrito.findIndex(producto => producto.id===item.id)
-            carrito[index].cantidad = existeEnCarrito(item).cantidad + counter
-        }else{
-            agregarProducto(item,counter)
-        }
+        agregarProducto(item,counter)
     }
 
     return (

@@ -5,7 +5,7 @@ const ItemCounter = (props) => {
     return (
         <div className="itemCounter">
             <Button onClick={() => {
-                if (props.counter > 1) {
+                if (props.counter > props.initial) {
                     props.setCounter(props.counter - 1)
                 }
             }
@@ -24,11 +24,19 @@ const ItemCounter = (props) => {
                         Comprar
                     </Button>
                     ) :
-                    (<Link to="/cart">
-                        <Button variant="primary">
-                            Ir al carrito
-                        </Button>
-                    </Link>
+                    (
+                        <div>
+                            <Link to="/">
+                                <Button variant="primary">
+                                    Seguir Comprando
+                                </Button>
+                            </Link>
+                            <Link to="/cart">
+                                <Button variant="primary">
+                                    Ir al carrito
+                                </Button>
+                            </Link>
+                        </div>
                     )
                 }
             </div>

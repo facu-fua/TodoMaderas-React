@@ -4,8 +4,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import CartWidget from '../cartWidget/cartWidget';
+import {CartContext} from '../../context/cartContext';
+import { useContext } from 'react';
 
 function NavTodoMaderas() {
+    const {carrito} = useContext(CartContext)
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -43,11 +46,18 @@ function NavTodoMaderas() {
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+                    {carrito.length > 0 ? 
+                    <>
                     <Link to="/cart">
                         <button>
                             <CartWidget img="/assets/images/cartlogo.png" />
+                            <h6>{carrito.length}</h6>
                         </button>
                     </Link>
+                    </>:
+                    null
+                    }
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>
