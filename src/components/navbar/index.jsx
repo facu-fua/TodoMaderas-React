@@ -24,11 +24,11 @@ function NavTodoMaderas() {
                         <NavDropdown title="Productos" id="basic-nav-dropdown">
                             <h6>Por Ubicacion</h6>
                             <NavDropdown.Item>
-                                <Link to={"category/Capital Federal"}>Capital Federal</Link>
+                                <Link to={"category/sillas"}>Sillas</Link>
                             </NavDropdown.Item>
-                            <NavDropdown.Item>
-                                <Link to={"category/Buenos Aires"}>Buenos Aires</Link>
-                            </NavDropdown.Item>
+                            {/* <NavDropdown.Item>
+                                <Link to={"category/mesas"}>Mesas</Link>
+                            </NavDropdown.Item> */}
                             {/* <hr/>
                             <h6>Por Producto</h6>
                             <NavDropdown.Item href="#action/3.1">
