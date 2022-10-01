@@ -5,20 +5,18 @@ import { getFirestore, collection, getDocs, query, where } from "firebase/firest
 const ProductosContext = React.createContext()
 
 const ProductosProvider = ({ children }) => {
-
+    const [productoId, setProductoId] = useState("")
     const [categoryId, setCategoryId] = useState()
     const [productos, setProductos] = useState([])
-    const [categoria, setCategoria] = useState("sillas")
-    console.log(categoryId)
+    
 
     //Hace falta hacer dinamico el cambio de categoria acorde a la eleccion de link
 
     const firebaseFetch = () => {
         const db = getFirestore();
         const items = collection(db, "productos");
-        const filtrado = query(items, where("categoryId", "==", categoria));
-        if (categoryId === "sillas") {
-            getDocs(filtrado).then((snapshot) => {
+        if (categoryId === undefined) {
+            getDocs(items).then((snapshot) => {
                 const docs = snapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data()
@@ -26,7 +24,8 @@ const ProductosProvider = ({ children }) => {
                 setProductos(docs)
             })
         } else {
-            getDocs(items).then((snapshot) => {
+            const filtrado = query(items, where("categoryId", "==", categoryId));
+            getDocs(filtrado).then((snapshot) => {
                 const docs = snapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data()

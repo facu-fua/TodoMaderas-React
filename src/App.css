@@ -105,3 +105,45 @@ button{
 a{
   text-decoration: none !important;
 }
+
+#ingreso button{
+  width: fit-content;
+  padding: 3px;
+  background-color: rgb(0, 192, 0);
+  border: rgb(0, 121, 0) 1px solid;
+  font-size: 15px;
+}
+
+#ingreso h6{
+  font-size: 13px;
+  color: #83858a;
+}
+
+#sesion{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.itemCarrito{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.itemCarrito h4{
+  margin: 0px 5px;
+  font-weight: 400;
+}
+.itemCarrito img{
+  width: 80px;
+  height: auto;
+  border: black 1px solid;
+  margin-right: 15px;
+}
+.precio{
+  display: flex;
+}
+
+#carrito h1{
+  margin-bottom: 50px;
+}

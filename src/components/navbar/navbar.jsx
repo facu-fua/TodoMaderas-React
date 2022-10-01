@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import CartWidget from '../cartWidget/cartWidget';
 import {CartContext} from '../../context/cartContext';
 import { useContext } from 'react';
+import { Button } from 'react-bootstrap';
 
 function NavTodoMaderas() {
     const {carrito} = useContext(CartContext)
@@ -22,30 +23,25 @@ function NavTodoMaderas() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="Productos" id="basic-nav-dropdown">
-                            <h6>Por Ubicacion</h6>
+                            <h6>Por Categoria</h6>
                             <NavDropdown.Item>
                                 <Link to={"category/sillas"}>Sillas</Link>
                             </NavDropdown.Item>
-                            {/* <NavDropdown.Item>
+                            <NavDropdown.Item>
                                 <Link to={"category/mesas"}>Mesas</Link>
-                            </NavDropdown.Item> */}
-                            {/* <hr/>
-                            <h6>Por Producto</h6>
-                            <NavDropdown.Item href="#action/3.1">
-                                <Link to={"/category/mesas y sillas de madera"}>Mesas y Sillas</Link>
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                <Link to={"/category/baño madera"}>Baño</Link>
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">
-                                <Link to={"/category/juegos madera"}>Juegos y juguetes</Link>
-                            </NavDropdown.Item> */}
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">
                                 <Link to={"/nosotros"}>Nosotros</Link>
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+                    <div id="ingreso">
+                        <div id="sesion">
+                            <Button>Iniciar Sesion</Button>
+                        </div>
+                        <h6>No tenes cuenta? <Button>Registrame</Button></h6>
+                    </div>
                     {carrito.length > 0 ? 
                     <>
                     <Link to="/cart">
@@ -57,7 +53,6 @@ function NavTodoMaderas() {
                     </>:
                     null
                     }
-                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>

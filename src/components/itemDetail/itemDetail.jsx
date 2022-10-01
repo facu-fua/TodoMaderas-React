@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { CartContext } from "../../context/cartContext";
-import ItemCounter from "../itemCounter";
+import ItemCounter from "../itemCounter/itemCounter";
 
 const ItemDetail = (prop) => {
     const item = prop.item
     const [counter, setCounter] = useState(1)
     const [compra, setCompra] = useState(true)
-    const { agregarProducto, existeEnCarrito, carrito } = useContext(CartContext)
+    const { agregarProducto } = useContext(CartContext)
 
     const onAdd = () => {
         setCompra(false)
@@ -16,12 +16,10 @@ const ItemDetail = (prop) => {
 
     return (
         <div className="detalles">
-            <img src={item.thumbnail} alt="" />
+            <img src={item.image} alt="" />
             <h3>{item.title}</h3>
             <h4>${item.price}</h4>
-            <h5>Condicion: "{item.attributes[1].value_name}"</h5>
-            <p>Vendidos: {item.sold_quantity}</p>
-            <ItemCounter initial={1} stock={10} onAdd={onAdd} counter={counter} setCounter={setCounter} compra={compra} />
+            <ItemCounter initial={1} stock={item.stock} onAdd={onAdd} counter={counter} setCounter={setCounter} compra={compra} />
         </div>
     )
 };

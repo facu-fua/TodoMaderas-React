@@ -18,6 +18,7 @@ const CartContextProvider = ({children}) =>{
         }else{
             setCarrito([...carrito, {
                 id: item.id,
+                imagen: item.image,
                 nombre: item.title,
                 precio: item.price,
                 cantidad: cantidad

@@ -1,12 +1,12 @@
 import './App.css';
-import NavTodoMaderas from './components/navbar/index.jsx';
+import NavTodoMaderas from './components/navbar/navbar.jsx';
 import ItemListContainer from './containers/itemListContainer.jsx';
-import Footer from './components/footer';
+import Footer from './components/footer/footer';
 import ProductListContainer from './containers/productListContainer';
 import ItemDetailContainer from './containers/itemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Nosotros from './components/nosotros';
-import Carrito from './components/carrito/index';
+import Nosotros from './components/nosotros/nosotros';
+import Carrito from './components/carrito/carrito';
 import { CartContextProvider } from './context/cartContext'
 import { ProductosProvider } from './context/productosContext'
 
