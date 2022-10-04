@@ -12,20 +12,6 @@ const ItemDetailContainer = () => {
     const { productos } = useContext(ProductosContext)
     const [id, setId] = useState(itemId)
 
-    /* const itemFetch = async () =>{
-        try {
-            const array = await productos
-            const nuevo = await array.find(element => element.id === itemId)
-            setItemDetail(nuevo)
-            console.log(itemDetail, array, nuevo)
-            if (array.length>0){
-                setLoading(true)
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }; */
-
     const itemFirestore = () => {
             const db = getFirestore();
             const itemRef = doc(db, "productos", id);
@@ -40,7 +26,6 @@ const ItemDetailContainer = () => {
         }
 
     useEffect(() => {
-        /* itemFetch() */
         itemFirestore()
     }, [])
 
