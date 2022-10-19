@@ -8,9 +8,6 @@ const ProductosProvider = ({ children }) => {
     const [productoId, setProductoId] = useState("")
     const [categoryId, setCategoryId] = useState()
     const [productos, setProductos] = useState([])
-    
-
-    //Hace falta hacer dinamico el cambio de categoria acorde a la eleccion de link
 
     const firebaseFetch = () => {
         const db = getFirestore();

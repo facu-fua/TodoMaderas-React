@@ -36,12 +36,6 @@ function NavTodoMaderas() {
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <div id="ingreso">
-                        <div id="sesion">
-                            <Button>Iniciar Sesion</Button>
-                        </div>
-                        <h6>No tenes cuenta? <Button>Registrame</Button></h6>
-                    </div>
                     {carrito.length > 0 ? 
                     <>
                     <Link to="/cart">
